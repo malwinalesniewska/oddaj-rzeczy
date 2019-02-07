@@ -1,0 +1,21 @@
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10%;
+  margin-top: 26px;
+
+  li {
+    list-style: none;
+    padding-left: 32px;
+    font-size: 12px;
+  }
+
+  span {
+    width: 64px;
+    height: 33px;
+    border: 1px solid black;
+    position: relative;
+    left: 77px;
+    bottom: 7px;
+  }
+}
