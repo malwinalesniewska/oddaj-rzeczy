@@ -10,12 +10,12 @@ class Header extends Component {
                 <UserPanel/>
                 <nav>
                     <ul className='menu'>
-                        <span/>
-                        <li>Start</li>
-                        <li>O co chodzi?</li>
-                        <li>O nas</li>
-                        <li>Fundacje i organizacje</li>
-                        <li>Kontakt</li>
+                        <span className='menu__element--square'/>
+                        <li className='menu__element'>Start</li>
+                        <li className='menu__element'>O co chodzi?</li>
+                        <li className='menu__element'>O nas</li>
+                        <li className='menu__element'>Fundacje i organizacje</li>
+                        <li className='menu__element'>Kontakt</li>
                     </ul>
                 </nav>
             </header>

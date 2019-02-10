@@ -4,13 +4,13 @@
   margin-right: 10%;
   margin-top: 26px;
 
-  li {
+  .menu__element {
     list-style: none;
     padding-left: 32px;
     font-size: 12px;
   }
 
-  span {
+  .menu__element--square {
     width: 64px;
     height: 33px;
     border: 1px solid black;
