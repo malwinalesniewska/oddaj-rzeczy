@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './_Header.scss';
 import UserPanel from '../UserPanel/UserPanel';
-// import { Container, Row, Col } from 'react-grid-system';
 
 class Header extends Component {
     render() {
@@ -24,11 +23,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-// {/*<Container>*/}
-//     {/*<Row>*/}
-//         {/*<Col md={8}>START</Col>*/}
-//         {/*<Col md={2}>START</Col>*/}
-//         {/*<Col md={2}>START</Col>*/}
-//     {/*</Row>*/}
-// {/*</Container>*/}

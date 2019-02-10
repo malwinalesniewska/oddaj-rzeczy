@@ -1,13 +1,14 @@
 .menu {
   display: flex;
   justify-content: flex-end;
-  margin-right: 10%;
+  margin-right: 175px;
   margin-top: 26px;
 
   .menu__element {
     list-style: none;
-    padding-left: 32px;
+    padding-left: 40px;
     font-size: 12px;
+    z-index: 1;
   }
 
   .menu__element--square {
@@ -15,7 +16,7 @@
     height: 33px;
     border: 1px solid black;
     position: relative;
-    left: 77px;
+    left: 85px;
     bottom: 7px;
   }
 }
