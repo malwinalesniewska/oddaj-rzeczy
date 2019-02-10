@@ -1,0 +1,10 @@
+@import "../App/colors";
+
+.stats_section {
+  height: 250px;
+  background: $background-color;
+  display: flex;
+  align-items: center;
+  padding-right: 100px;
+  padding-left: 100px;
+}

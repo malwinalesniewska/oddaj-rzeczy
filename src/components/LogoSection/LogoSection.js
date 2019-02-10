@@ -15,7 +15,6 @@ class LogoSection extends Component {
                     <FunctionButton text='ODDAJ RZECZY' width='250px' height='100px' margin='80px' float='left'/>
                     <FunctionButton text='ZORGANIZUJ ZBIÓRKĘ' width='250px' height='100px' margin='80px' float='right'/>
                 </div>
-
             </section>
         )
     }
