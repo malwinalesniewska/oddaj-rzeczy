@@ -4,13 +4,10 @@ import './_FunctionButton.scss';
 class FunctionButton extends Component {
 
     render() {
-        const {width, height, margin, float, text} = this.props;
+        const {float, text, className} = this.props;
         return (
-            <button className='function_button'
-                    style={{width: width,
-                            height: height,
-                            marginTop: margin,
-                            float: float}}
+            <button className={className}
+                    style={{float: float}}
             >{text}</button>
         );
     }

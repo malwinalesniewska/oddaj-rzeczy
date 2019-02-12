@@ -12,8 +12,8 @@ class LogoSection extends Component {
                 <div className='logo_container__info'>
                     <p className='logo_container__text'>Zacznij pomagać!<br/>Oddaj niechciane rzeczy w zaufane ręce</p>
                     <Decoration/>
-                    <FunctionButton text='ODDAJ RZECZY' width='250px' height='100px' margin='80px' float='left'/>
-                    <FunctionButton text='ZORGANIZUJ ZBIÓRKĘ' width='250px' height='100px' margin='80px' float='right'/>
+                    <FunctionButton className='logo_section_buttons' text='ODDAJ RZECZY' float='left'/>
+                    <FunctionButton className='logo_section_buttons' text='ZORGANIZUJ ZBIÓRKĘ' float='right'/>
                 </div>
             </section>
         )

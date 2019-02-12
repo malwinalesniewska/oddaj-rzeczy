@@ -1,12 +1,23 @@
 @import "../App/colors";
 
 .four_steps {
+  width: 100%;
+
+  .four_steps__title {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 40px;
+    margin-bottom: -10px;
+  }
 
   .four_steps__innerContainer {
     display: flex;
-    width: 750px;
-    height: 200px;
+    width: 800px;
+    height: 250px;
     background: $background-four-steps;
+    margin: 20px auto 0;
+    text-align: center;
+    padding: 30px 20px 20px 20px;
   }
 
 }
