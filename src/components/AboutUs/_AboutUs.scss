@@ -1,0 +1,43 @@
+@import "../App/colors";
+
+.about_us {
+  display: flex;
+  align-items: center;
+  background: $background-four-steps-about-us;
+  height: 670px;
+
+  .about_us__left {
+    width: 55%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 30px;
+
+    .about_us__title {
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .about_us__text {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 2;
+      margin-top: 20px;
+    }
+
+    .about_us__sign {
+      background: url("../../images/sign.png");
+      width: 200px;
+      height: 116px;
+      float: right;
+      margin-top: 10px;
+    }
+  }
+
+  .about_us__right {
+    background: url("../../images/about.jpg") no-repeat center;
+    width: 850px;
+    height: 640px;
+    background-size: contain;
+
+  }
+}
