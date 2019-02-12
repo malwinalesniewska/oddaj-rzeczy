@@ -1,0 +1,12 @@
+@import "../App/colors";
+
+.four_steps {
+
+  .four_steps__innerContainer {
+    display: flex;
+    width: 750px;
+    height: 200px;
+    background: $background-four-steps;
+  }
+
+}
