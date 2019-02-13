@@ -1,24 +1,23 @@
-.single_stat__container {
-  margin-left: 60px;
-  margin-right: 60px;
+.single_stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 12px;
+  margin-right: 70px;
+  margin-left: 70px;
 
-  .single_stat {
-    text-align: center;
-  }
-
-  .single_stat__number {
+  &__number {
     font-size: 60px;
     font-weight: 300;
-    padding-bottom: 7px;
   }
 
-  .single_stat__title {
+  &__title {
     padding-bottom: 15px;
   }
 
-  .single_stat__text {
+  &__text {
     font-weight: 300;
+    text-align: center;
   }
 }
 

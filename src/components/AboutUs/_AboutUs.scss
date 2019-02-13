@@ -5,8 +5,9 @@
   align-items: center;
   background: $background-four-steps-about-us;
   height: 670px;
+  margin-top: 40px;
 
-  .about_us__left {
+  &__left {
     width: 55%;
     text-align: center;
     padding-left: 100px;
@@ -33,7 +34,7 @@
     }
   }
 
-  .about_us__right {
+  &__right {
     background: url("../../images/about.jpg") no-repeat center;
     width: 850px;
     height: 640px;

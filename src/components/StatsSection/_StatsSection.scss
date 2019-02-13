@@ -5,6 +5,12 @@
   background: $background-stats;
   display: flex;
   align-items: center;
-  padding-right: 100px;
-  padding-left: 100px;
+  padding-left: 90px;
+  padding-right: 90px;
+
+  @media screen and (max-width: 1000px) {
+    flex-wrap: wrap;
+    align-items: center;
+    height: 600px;
+  }
 }

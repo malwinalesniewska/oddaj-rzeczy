@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import SingleStep from "./SingleStep/SingleStep";
 import Decoration from '../Decoration/Decoration';
-import FunctionButton from '../FunctionButton/FunctionButton';
+import FunctionButtons from '../FunctionButtons/FunctionButtons';
 import { faHands } from '@fortawesome/free-solid-svg-icons';
 import { faBox } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -12,19 +12,37 @@ class FourSteps extends Component {
     render() {
         return (
             <section className='four_steps'>
-                <p className='four_steps__title'>Wystarczą 4 proste kroki</p>
+                <p className='four_steps__title'>
+                    Wystarczą 4 proste kroki
+                </p>
                 <Decoration/>
                 <div className='four_steps__innerContainer'>
-                    <SingleStep icon={faHands} title='Wybierz rzeczy' text='ubrania, zabawki, sprzęt i inne'
-                                className='single_step__title'/>
-                    <SingleStep icon={faBox} title='Spakuj je' text='skorzystaj z worków na śmieci'
-                                className='single_step__title'/>
-                    <SingleStep icon={faSearch} title='Zdecyduj komu chcesz pomóc' text='wybierz zaufane miejsce'
-                                className='single_step__title--search'/>
-                    <SingleStep icon={faPeopleCarry} title='Zamów kuriera' text='kurier przyjedzie w dogodnym terminie'
-                                className='single_step__title'/>
+                    <SingleStep
+                        icon={faHands}
+                        title='Wybierz rzeczy'
+                        text='ubrania, zabawki, sprzęt i inne'
+                        className='single_step__title'
+                    />
+                    <SingleStep
+                        icon={faBox}
+                        title='Spakuj je'
+                        text='skorzystaj z worków na śmieci'
+                        className='single_step__title'
+                    />
+                    <SingleStep
+                        icon={faSearch}
+                        title='Zdecyduj komu chcesz pomóc'
+                        text='wybierz zaufane miejsce'
+                        className='single_step__title--search'
+                    />
+                    <SingleStep
+                        icon={faPeopleCarry}
+                        title='Zamów kuriera'
+                        text='kurier przyjedzie w dogodnym terminie'
+                        className='single_step__title'
+                    />
                 </div>
-                <FunctionButton className='register_button' text='ZAŁÓŻ KONTO'/>
+                <FunctionButtons text='ZAŁÓŻ KONTO'/>
             </section>
         );
     }

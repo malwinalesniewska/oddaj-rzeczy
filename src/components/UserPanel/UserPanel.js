@@ -12,8 +12,12 @@ class UserPanel extends Component {
     render() {
         return (
             <div className='user_panel'>
-                <span className='user_panel__login'>Zaloguj</span>
-                <div className='user_panel__register'><span>Załóż konto</span></div>
+                <span className='user_panel__login'>
+                    Zaloguj
+                </span>
+                <div className='user_panel__register'>
+                    <span>Załóż konto</span>
+                </div>
             </div>
         )
     }

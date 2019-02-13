@@ -17,6 +17,7 @@ class Header extends Component {
                         <li className='menu__element'>Kontakt</li>
                     </ul>
                 </nav>
+                {/*osobny komponent*/}
             </header>
         )
     }
