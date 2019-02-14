@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import './_SingleStat.scss'
+import PropTypes from 'prop-types';
+import './_SingleStat.scss';
 
 class SingleStat extends Component {
     render() {
@@ -19,5 +20,11 @@ class SingleStat extends Component {
         );
     }
 }
+
+SingleStat.propTypes = {
+    number: PropTypes.number,
+    title: PropTypes.string,
+    text: PropTypes.string
+};
 
 export default SingleStat;

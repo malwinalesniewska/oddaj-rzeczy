@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './_SingleStep.scss';
 
@@ -25,5 +26,11 @@ class SingleStep extends Component {
         );
     }
 }
+
+SingleStep.propTypes = {
+    title: PropTypes.string,
+    text: PropTypes.string,
+    className: PropTypes.string
+};
 
 export default SingleStep;

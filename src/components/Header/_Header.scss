@@ -1,26 +1,4 @@
-.menu {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 175px;
-  margin-top: 26px;
-
-  @media screen and (max-width: 1000px) {
-    flex-wrap: wrap;
-  }
-
-  &__element {
-    list-style: none;
-    padding-left: 40px;
-    font-size: 12px;
-    z-index: 1;
-
-    &--square {
-      width: 64px;
-      height: 33px;
-      border: 1px solid black;
-      position: relative;
-      left: 85px;
-      bottom: 7px;
-    }
-  }
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
 }
