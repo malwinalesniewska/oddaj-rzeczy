@@ -5,6 +5,7 @@ import LogoSection from '../LogoSection/LogoSection';
 import StatsSection from '../StatsSection/StatsSection';
 import FourSteps from '../FourSteps/FourSteps';
 import AboutUs from "../AboutUs/AboutUs";
+import ListsSection from "../ListsSection/ListsSection";
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
             <StatsSection/>
             <FourSteps/>
             <AboutUs/>
+            <ListsSection/>
         </Fragment>
     );
   }
