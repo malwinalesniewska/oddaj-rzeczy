@@ -1,18 +1,10 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import './_OrganisationButton.scss';
 
 class OrganisationButton extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isClicked: false
-        }
-    }
-
-    clickHandler = (event) => {
-        this.setState({
-            isClicked: !this.state.isClicked
-        })
+    clickHandler = () => {
+        this.props.onClick(this.props.index)
     };
 
     render() {
@@ -27,5 +19,10 @@ class OrganisationButton extends Component {
         )
     }
 }
+
+OrganisationButton.ropTypes = {
+    onClick: PropTypes.func,
+    text: PropTypes.string
+};
 
 export default OrganisationButton;

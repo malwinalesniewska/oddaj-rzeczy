@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import Decoration from "../Decoration/Decoration";
 import './_ListsSection.scss';
-import OrganisationButton from '../OrganisationButton/OrganisationButton';
-import OrganisationsList from "../OrganisationsList/OrganisationsList";
+import OrganisationsList from '../OrganisationsList/OrganisationsList';
 
 class ListsSection extends Component {
     render() {
@@ -13,9 +12,6 @@ class ListsSection extends Component {
                         Komu pomagamy?
                     </h2>
                     <Decoration/>
-                    <OrganisationButton text='Fundacjom'/>
-                    <OrganisationButton text='Organizacjom pozarządowym'/>
-                    <OrganisationButton text='Lokalnym zbiórkom'/>
                     <OrganisationsList/>
                 </div>
             </section>

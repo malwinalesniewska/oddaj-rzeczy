@@ -28,7 +28,7 @@ class SingleStep extends Component {
 }
 
 SingleStep.propTypes = {
-    icom: PropTypes.object,
+    icon: PropTypes.object,
     title: PropTypes.string,
     text: PropTypes.string,
     className: PropTypes.string
