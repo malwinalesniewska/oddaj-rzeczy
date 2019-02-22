@@ -1,0 +1,13 @@
+.organisation_button {
+  width: 130px;
+  height: 60px;
+  background: none;
+  border: none;
+  font-size: 17px;
+  margin: 10px 10px 30px;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid black;
+  }
+}

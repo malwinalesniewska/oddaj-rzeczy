@@ -1,0 +1,51 @@
+@import "../../utils/variables";
+
+.organisations_list {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  align-items: center;
+
+  &__left {
+    width: 50%;
+  }
+
+  &_right {
+    width: 50%;
+  }
+
+  &__single {
+    list-style: none;
+    font-size: 18px;
+    font-family: 'Merriweather', Arial, sans-serif;
+
+    @mixin underline {
+      content: '';
+      display: block;
+      width: 300px;
+      height: 1px;
+      background-color: $underline-lists-section;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    &--right_list {
+      text-align: right;
+      font-size: 12px;
+      margin-top: 55px;
+
+      &:after {
+        @include underline;
+        margin-top: 20px;
+        margin-bottom: 50px;
+      }
+    }
+    &--mission {
+      font-size: 12px;
+      font-style: italic;
+
+      &:after {
+        @include underline;
+      }
+    }
+  }
+}

@@ -8,9 +8,9 @@ class OrganisationsList extends Component {
         super(props);
         this.state = {
             currentLeftList: [
-                'Fundacja "Dbam o zdrowie"', ['Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej'],
-                'Fundacja "Dla dzieci"', ['Cel i misja: Pomoc dzieciom z ubogich rodzin'],
-                'Fundacja "Bez domu"', ['Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania']
+                'Fundacja “Dbam o zdrowie”', ['Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej'],
+                'Fundacja “Dla dzieci”', ['Cel i misja: Pomoc dzieciom z ubogich rodzin'],
+                'Fundacja “Bez domu”', ['Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania']
             ],
             currentRightList: [
                 'ubrania, jedzenie, sprzęt AGD, meble, zabawki',
@@ -24,9 +24,9 @@ class OrganisationsList extends Component {
         if (index === 1) {
             this.setState({
                 currentLeftList: [
-                    'Fundacja "Dbam o zdrowie"', ['Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej'],
-                    'Fundacja "Dla dzieci"', ['Cel i misja: Pomoc dzieciom z ubogich rodzin'],
-                    'Fundacja "Bez domu"', ['Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania']
+                    'Fundacja “Dbam o zdrowie”', ['Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej'],
+                    'Fundacja “Dla dzieci”', ['Cel i misja: Pomoc dzieciom z ubogich rodzin'],
+                    'Fundacja “Bez domu”', ['Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania']
                 ],
                 currentRightList: [
                     'ubrania, jedzenie, sprzęt AGD, meble, zabawki',
@@ -74,23 +74,25 @@ class OrganisationsList extends Component {
     render() {
         const {currentLeftList, currentRightList} = this.state;
         return (
-            <div>
-                <OrganisationButton
-                    text='Fundacjom'
-                    onClick={this.foundationsButton}
-                    index={1}
-                />
-                <OrganisationButton
-                    text='Organizacjom pozarządowym'
-                    onClick={this.nonGovernmentalButton}
-                    index={2}
-                />
-                <OrganisationButton
-                    text='Lokalnym zbiórkom'
-                    onClick={this.localButton}
-                    index={3}
-                />
-                <p>
+            <div className='organisations_lists'>
+                <div className='organisations_lists__buttons'>
+                    <OrganisationButton
+                        text='Fundacjom'
+                        onClick={this.foundationsButton}
+                        index={1}
+                    />
+                    <OrganisationButton
+                        text='Organizacjom pozarządowym'
+                        onClick={this.nonGovernmentalButton}
+                        index={2}
+                    />
+                    <OrganisationButton
+                        text='Lokalnym zbiórkom'
+                        onClick={this.localButton}
+                        index={3}
+                    />
+                </div>
+                <p className='organisations_lists__description'>
                     W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z <br />
                     którymi współpracujemy. Możesz sprawdzić czym się zajmują, <br />
                     komu pomagają i czego potrzebują.

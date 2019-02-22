@@ -6,18 +6,36 @@ class SingleList extends Component {
         const {leftList, rightList} = this.props;
         return (
             <div className='organisations_list'>
-                <ul>
+                <ul className='organisations_list__left'>
                     {leftList.map(function nested(elem, index) {
                         if (Array.isArray(elem)) {
-                            return elem.map(nested => <span key={index}>{nested}</span>)
-                        } else {
-                            return <li key={index}>{elem}</li>
-                        }
+                            return (
+                                elem.map(nested =>
+                                    <span
+                                        className='organisations_list__single organisations_list__single--mission'
+                                        key={index}
+                                    >
+                                        {nested}
+                                    </span>
+                        ))} else {
+                            return (
+                            <li
+                                className='organisations_list__single'
+                                key={index}
+                            >
+                                {elem}
+                            </li>
+                        )}
                     })}
                 </ul>
-                <ul>
+                <ul className='organisations_list__right'>
                     {rightList.map((elem, index) =>
-                        <li key={index}>{elem}</li>
+                        <li
+                            className='organisations_list__single organisations_list__single--right_list'
+                            key={index}
+                        >
+                            {elem}
+                        </li>
                     )}
                 </ul>
             </div>

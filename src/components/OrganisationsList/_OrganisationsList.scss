@@ -1,3 +1,15 @@
-.organisations_list {
+.organisations_lists {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__buttons {
+    display: flex;
+  }
+
+  &__description {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
 }

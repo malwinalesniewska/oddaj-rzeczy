@@ -6,15 +6,13 @@ import OrganisationsList from '../OrganisationsList/OrganisationsList';
 class ListsSection extends Component {
     render() {
         return (
-            <section>
-                <div className='lists__container'>
-                    <h2 className='lists__header'>
-                        Komu pomagamy?
-                    </h2>
-                    <Decoration/>
-                    <OrganisationsList/>
-                </div>
-            </section>
+            <div className='lists'>
+                <h2 className='lists__header'>
+                    Komu pomagamy?
+                </h2>
+                <Decoration/>
+                <OrganisationsList/>
+            </div>
         );
     }
 }
