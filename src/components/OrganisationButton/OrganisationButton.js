@@ -4,7 +4,8 @@ import './_OrganisationButton.scss';
 
 class OrganisationButton extends Component {
     clickHandler = () => {
-        this.props.onClick(this.props.index)
+        const {name, onClick} = this.props;
+        onClick(name)
     };
 
     render() {

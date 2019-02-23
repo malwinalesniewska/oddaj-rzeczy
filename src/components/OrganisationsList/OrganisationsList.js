@@ -2,11 +2,26 @@ import React, {Component} from 'react';
 import './_OrganisationsList.scss';
 import SingleList from "../SingleList/SingleList";
 import OrganisationButton from "../OrganisationButton/OrganisationButton";
+import {audienceListMap, audienceNames} from "./audienceListMap";
+
+
+const organisations = [
+    {
+        name: audienceNames.FOUNDATION,
+        title:'Fundacjom'
+    },
+    {
+        name: audienceNames.NON_GOV,
+        title: 'Organizacjom pozarządowym'
+    },
+    {
+        name: audienceNames.LOCAL,
+        title: 'Lokalnym zbiórkom'
+    }
+];
 
 class OrganisationsList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+    state = {
             currentLeftList: [
                 'Fundacja “Dbam o zdrowie”', ['Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej'],
                 'Fundacja “Dla dzieci”', ['Cel i misja: Pomoc dzieciom z ubogich rodzin'],
@@ -17,58 +32,10 @@ class OrganisationsList extends Component {
                 'ubrania, meble, zabawki',
                 'ubrania, jedzenie, ciepłe koce'
             ]
-        }
-    }
-
-    foundationsButton = index => {
-        if (index === 1) {
-            this.setState({
-                currentLeftList: [
-                    'Fundacja “Dbam o zdrowie”', ['Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej'],
-                    'Fundacja “Dla dzieci”', ['Cel i misja: Pomoc dzieciom z ubogich rodzin'],
-                    'Fundacja “Bez domu”', ['Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania']
-                ],
-                currentRightList: [
-                    'ubrania, jedzenie, sprzęt AGD, meble, zabawki',
-                    'ubrania, meble, zabawki',
-                    'ubrania, jedzenie, ciepłe koce'
-                ]
-            })
-        }
     };
 
-    nonGovernmentalButton = index => {
-        if (index === 2) {
-            this.setState({
-                currentLeftList: [
-                    'Organizacja1', ['Cel i misja: Lorem ipsum dolot sit amet'],
-                    'Organizacja2', ['Cel i misja: Lorem ipsum dolot sit amet'],
-                    'Organizacja3', ['Cel i misja: Lorem ipsum dolot sit amet']
-                ],
-                currentRightList: [
-                    'Gumbo beet greens corn soko endive gumbo gourd',
-                    'Gumbo beet greens corn soko endive gumbo gourd',
-                    'Gumbo beet greens corn soko endive gumbo gourd'
-                ]
-            })
-        }
-    };
-
-    localButton = index => {
-        if (index === 3) {
-            this.setState({
-                currentLeftList: [
-                    'Zbiórka1', ['Cel i misja: Lorem ipsum dolot sit amet'],
-                    'Zbiórka2', ['Cel i misja: Lorem ipsum dolot sit amet'],
-                    'Zbiórka3', ['Cel i misja: Lorem ipsum dolot sit amet']
-                ],
-                currentRightList: [
-                    'Gumbo beet greens corn soko endive gumbo gourd',
-                    'Gumbo beet greens corn soko endive gumbo gourd',
-                    'Gumbo beet greens corn soko endive gumbo gourd'
-                ]
-            })
-        }
+    showAudienceList = name => {
+        this.setState(audienceListMap[name])
     };
 
     render() {
@@ -76,21 +43,13 @@ class OrganisationsList extends Component {
         return (
             <div className='organisations_lists'>
                 <div className='organisations_lists__buttons'>
-                    <OrganisationButton
-                        text='Fundacjom'
-                        onClick={this.foundationsButton}
-                        index={1}
-                    />
-                    <OrganisationButton
-                        text='Organizacjom pozarządowym'
-                        onClick={this.nonGovernmentalButton}
-                        index={2}
-                    />
-                    <OrganisationButton
-                        text='Lokalnym zbiórkom'
-                        onClick={this.localButton}
-                        index={3}
-                    />
+                    {organisations.map((organisation) => {
+                        return <OrganisationButton
+                                    text={organisation.title}
+                                    name={organisation.name}
+                                    onClick={this.showAudienceList}
+                                />
+                    })}
                 </div>
                 <p className='organisations_lists__description'>
                     W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z <br />
