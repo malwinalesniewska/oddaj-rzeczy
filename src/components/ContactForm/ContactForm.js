@@ -3,14 +3,11 @@ import './_ContactForm.scss';
 import Decoration from '../Decoration/Decoration';
 
 class ContactForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            email: '',
-            message: ''
-        }
-    }
+    state = {
+        name: '',
+        email: '',
+        message: ''
+    };
 
     userName = (event) => {
         this.setState({

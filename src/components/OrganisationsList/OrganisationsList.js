@@ -22,16 +22,16 @@ const organisations = [
 
 class OrganisationsList extends Component {
     state = {
-            currentLeftList: [
-                'Fundacja “Dbam o zdrowie”', ['Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej'],
-                'Fundacja “Dla dzieci”', ['Cel i misja: Pomoc dzieciom z ubogich rodzin'],
-                'Fundacja “Bez domu”', ['Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania']
-            ],
-            currentRightList: [
-                'ubrania, jedzenie, sprzęt AGD, meble, zabawki',
-                'ubrania, meble, zabawki',
-                'ubrania, jedzenie, ciepłe koce'
-            ]
+        currentLeftList: [
+            'Fundacja “Dbam o zdrowie”', ['Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej'],
+            'Fundacja “Dla dzieci”', ['Cel i misja: Pomoc dzieciom z ubogich rodzin'],
+            'Fundacja “Bez domu”', ['Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania']
+        ],
+        currentRightList: [
+            'ubrania, jedzenie, sprzęt AGD, meble, zabawki',
+            'ubrania, meble, zabawki',
+            'ubrania, jedzenie, ciepłe koce'
+        ]
     };
 
     showAudienceList = name => {
@@ -43,12 +43,12 @@ class OrganisationsList extends Component {
         return (
             <div className='organisations_lists'>
                 <div className='organisations_lists__buttons'>
-                    {organisations.map((organisation, index) => {
+                    {organisations.map((organisation) => {
                         return <OrganisationButton
                                     text={organisation.title}
                                     name={organisation.name}
                                     onClick={this.showAudienceList}
-                                    key={index}
+                                    key={organisation.name}
                                 />
                     })}
                 </div>
