@@ -43,11 +43,12 @@ class OrganisationsList extends Component {
         return (
             <div className='organisations_lists'>
                 <div className='organisations_lists__buttons'>
-                    {organisations.map((organisation) => {
+                    {organisations.map((organisation, index) => {
                         return <OrganisationButton
                                     text={organisation.title}
                                     name={organisation.name}
                                     onClick={this.showAudienceList}
+                                    key={index}
                                 />
                     })}
                 </div>

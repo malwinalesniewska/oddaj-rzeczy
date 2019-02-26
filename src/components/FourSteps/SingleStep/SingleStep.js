@@ -6,7 +6,12 @@ import './_SingleStep.scss';
 
 class SingleStep extends Component {
     render() {
-        const {icon, title, text, className} = this.props;
+        const {
+            icon,
+            title,
+            text,
+            className
+        } = this.props;
         return (
             <div className='single_step'>
                 <FontAwesomeIcon

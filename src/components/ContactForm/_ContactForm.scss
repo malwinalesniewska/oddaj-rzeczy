@@ -1,0 +1,109 @@
+.contact_section {
+  background: url('../../images/footer_bg_img.jpg') no-repeat;
+  min-width: 1200px;
+  min-height: 590px;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+
+  &__main {
+    width: 40%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 25px;
+  }
+
+  &__form {
+    margin-top: 30px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__form_title {
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 25px;
+    align-self: flex-start;
+  }
+
+  &__name_email_inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 12px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 160px;
+    padding-left: 15px;
+
+    &::placeholder {
+      color: black;
+    }
+
+    &--message {
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    &--send {
+      border: 1px solid black;
+      width: 65px;
+      height: 35px;
+      cursor: pointer;
+      margin-top: 15px;
+      padding-left: 0;
+    }
+  }
+
+  &__footer {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+
+  &__social {
+    display: flex;
+    width: 80px;
+    justify-content: space-around;
+  }
+
+  &__media {
+    width: 32px;
+    height: 32px;
+    border: 1px solid black;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--facebook {
+      background: url('../../images/1447355328_06-facebook.png') no-repeat;
+      background-size: contain;
+      width: 9px;
+      height: 21px;
+    }
+
+    &--instagram {
+      background: url('../../images/1447355379_Instagram.png') no-repeat;
+      background-size: contain;
+      width: 20px;
+      height: 21px;
+    }
+  }
+}

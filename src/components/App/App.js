@@ -4,8 +4,9 @@ import Header from '../Header/Header';
 import LogoSection from '../LogoSection/LogoSection';
 import StatsSection from '../StatsSection/StatsSection';
 import FourSteps from '../FourSteps/FourSteps';
-import AboutUs from "../AboutUs/AboutUs";
-import ListsSection from "../ListsSection/ListsSection";
+import AboutUs from '../AboutUs/AboutUs';
+import ListsSection from '../ListsSection/ListsSection';
+import ContactForm from '../ContactForm/ContactForm';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <FourSteps/>
             <AboutUs/>
             <ListsSection/>
+            <ContactForm/>
         </Fragment>
     );
   }

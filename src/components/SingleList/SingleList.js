@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './_SingleList.scss';
 
+
 class SingleList extends Component {
     render() {
         const {leftList, rightList} = this.props;
