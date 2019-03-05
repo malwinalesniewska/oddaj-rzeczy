@@ -6,39 +6,90 @@ const audienceNames = {
 
 const audienceListMap = {
     foundation: {
-        currentLeftList: [
-            'Fundacja “Dbam o zdrowie”', ['Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej'],
-            'Fundacja “Dla dzieci”', ['Cel i misja: Pomoc dzieciom z ubogich rodzin'],
-            'Fundacja “Bez domu”', ['Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania']
-        ],
-        currentRightList: [
-            'ubrania, jedzenie, sprzęt AGD, meble, zabawki',
-            'ubrania, meble, zabawki',
-            'ubrania, jedzenie, ciepłe koce'
+        list: [
+            {
+                title: 'Fundacja “Dbam o zdrowie”',
+                description: 'Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej',
+                items: 'ubrania, jedzenie, sprzęt AGD, meble, zabawki'
+            },
+            {
+                title: 'Fundacja “Dla dzieci”',
+                description: 'Cel i misja: Pomoc dzieciom z ubogich rodzin',
+                items: 'ubrania, meble, zabawki'
+            },
+            {
+                title: 'Fundacja “Bez domu”',
+                description: 'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania',
+                items: 'ubrania, jedzenie, ciepłe koce'
+            },
+            {
+                title: 'Fundacja “4”',
+                description: 'Cel i misja: Pomoc dla szpitalom',
+                items: 'ubrania, jedzenie, ciepłe koce'
+            },
+            {
+                title: 'Fundacja “5”',
+                description: 'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania',
+                items: 'ubrania, jedzenie, ciepłe koce'
+            },
+            {
+                title: 'Fundacja “6”',
+                description: 'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania',
+                items: 'ubrania, jedzenie, ciepłe koce'
+            },
+            {
+                title: 'Fundacja “7”',
+                description: 'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania',
+                items: 'ubrania, jedzenie, ciepłe koce'
+            }
         ]
     },
     nonGovernmental: {
-        currentLeftList: [
-            'Organizacja1', ['Cel i misja: Lorem ipsum dolot sit amet'],
-            'Organizacja2', ['Cel i misja: Lorem ipsum dolot sit amet'],
-            'Organizacja3', ['Cel i misja: Lorem ipsum dolot sit amet']
-        ],
-        currentRightList: [
-            'Gumbo beet greens corn soko endive gumbo gourd',
-            'Gumbo beet greens corn soko endive gumbo gourd',
-            'Gumbo beet greens corn soko endive gumbo gourd'
+        list: [
+            {
+                title: 'Organizacja1',
+                description: 'Cel i misja: Lorem ipsum dolot sit amet',
+                items: 'Gumbo beet greens corn soko endive gumbo gourd'
+            },
+            {
+                title: 'Organizacja2',
+                description: 'Cel i misja: Lorem ipsum dolot sit amet',
+                items: 'Gumbo beet greens corn soko endive gumbo gourd'
+            },
+            {
+                title: 'Organizacja3',
+                description: 'Cel i misja: Lorem ipsum dolot sit amet',
+                items: 'Gumbo beet greens corn soko endive gumbo gourd'
+            },
+            {
+                title: 'Organizacja2',
+                description: 'Cel i misja: Lorem ipsum dolot sit amet',
+                items: 'Gumbo beet greens corn soko endive gumbo gourd'
+            },
+            {
+                title: 'Organizacja3',
+                description: 'Cel i misja: Lorem ipsum dolot sit amet',
+                items: 'Gumbo beet greens corn soko endive gumbo gourd'
+            }
         ]
     },
     local: {
-        currentLeftList: [
-            'Zbiórka1', ['Cel i misja: Lorem ipsum dolot sit amet'],
-            'Zbiórka2', ['Cel i misja: Lorem ipsum dolot sit amet'],
-            'Zbiórka3', ['Cel i misja: Lorem ipsum dolot sit amet']
-        ],
-        currentRightList: [
-            'Gumbo beet greens corn soko endive gumbo gourd',
-            'Gumbo beet greens corn soko endive gumbo gourd',
-            'Gumbo beet greens corn soko endive gumbo gourd'
+        list: [
+            {
+                title: 'Zbiórka1',
+                description: 'Cel i misja: Lorem ipsum dolot sit amet',
+                items: 'Gumbo beet greens corn soko endive gumbo gourd'
+            },
+            {
+                title: 'Zbiórka2',
+                description: 'Cel i misja: Lorem ipsum dolot sit amet',
+                items: 'Gumbo beet greens corn soko endive gumbo gourd'
+            },
+            {
+                title: 'Zbiórka3',
+                description: 'Cel i misja: Lorem ipsum dolot sit amet',
+                items: 'Gumbo beet greens corn soko endive gumbo gourd'
+            }
         ]
     }
 };

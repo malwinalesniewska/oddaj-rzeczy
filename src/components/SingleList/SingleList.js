@@ -1,47 +1,79 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import './_SingleList.scss';
 
 
+const NUMBER_OF_ITEMS_PER_PAGE = 3;
+
 class SingleList extends Component {
+    state = {
+        currentPage: 1
+    };
+
+    goToPage = (pageNumber) => {
+        this.setState({
+            currentPage: pageNumber
+        })
+    };
+
     render() {
-        const {leftList, rightList} = this.props;
+        const { currentPage } = this.state;
+        const {list} = this.props;
+
+        const start = (currentPage - 1) * NUMBER_OF_ITEMS_PER_PAGE;
+        const end = currentPage * NUMBER_OF_ITEMS_PER_PAGE;
+        const elemsToDisplay = list.slice(start, end);
+        const noOfPages = Math.ceil(list.length / NUMBER_OF_ITEMS_PER_PAGE);
+
+        let pages = [];
+
+        for (let i = 0; i < noOfPages; i++) {
+            pages.push(i + 1)
+        }
+
         return (
             <div className='organisations_list'>
-                <ul className='organisations_list__left'>
-                    {leftList.map(function nested(elem, index) {
-                        if (Array.isArray(elem)) {
+                {/*<div className='organisations_list__lists'>*/}
+                    {
+                        elemsToDisplay.map((elem) => {
                             return (
-                                elem.map(nested =>
-                                    <span
-                                        className='organisations_list__single organisations_list__single--mission'
-                                        key={index}
-                                    >
-                                        {nested}
-                                    </span>
-                        ))} else {
+                                <Fragment>
+                                    <div className='organisations_list__left'>
+                                        <div>
+                                            { elem.title }
+                                        </div>
+                                        <div className='organisations_list__left--mission'>
+                                            { elem.description }
+                                        </div>
+                                    </div>
+                                    <div className='organisations_list__right'>
+                                        { elem.items }
+                                    </div>
+                                </Fragment>
+                            )
+                        })
+                    }
+                {/*</div>*/}
+                <div className='organisations_list__buttons'>
+                    {pages.map((pageNumber) => {
                             return (
-                            <li
-                                className='organisations_list__single'
-                                key={index}
-                            >
-                                {elem}
-                            </li>
-                        )}
-                    })}
-                </ul>
-                <ul className='organisations_list__right'>
-                    {rightList.map((elem, index) =>
-                        <li
-                            className='organisations_list__single organisations_list__single--right_list'
-                            key={index}
-                        >
-                            {elem}
-                        </li>
-                    )}
-                </ul>
+
+                                <button
+                                    className='organisations_list__single_button'
+                                    onClick={() => this.goToPage(pageNumber)}
+                                >
+                                    {pageNumber}
+                                </button>
+
+                            )
+                    })
+                    }
+                </div>
+
             </div>
-        );
+        )
     }
 }
 
 export default SingleList;
+
+

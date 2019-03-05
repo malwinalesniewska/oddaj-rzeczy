@@ -2,50 +2,118 @@
 
 .organisations_list {
   display: flex;
-  justify-content: space-between;
-  width: 800px;
+  flex-direction: column;
   align-items: center;
+  min-width: 800px;
+  max-width: 1000px;
+  font-size: 18px;
+  font-family: 'Merriweather', Arial, sans-serif;
+  margin-bottom: 20px;
+
+  //&__lists {
+  //  //display: flex;
+  //  ////flex-direction: column;
+  //  //justify-content: space-between;
+  //}
+
+  @mixin underline {
+    content: '';
+    display: block;
+    width: 300px;
+    height: 1px;
+    background-color: $underline-lists-section;
+    margin-top: 5px;
+  }
 
   &__left {
+    align-self: flex-start;
     width: 50%;
-  }
+    padding-bottom: 30px;
 
-  &_right {
-    width: 50%;
-  }
-
-  &__single {
-    list-style: none;
-    font-size: 18px;
-    font-family: 'Merriweather', Arial, sans-serif;
-
-    @mixin underline {
-      content: '';
-      display: block;
-      width: 300px;
-      height: 1px;
-      background-color: $underline-lists-section;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-    &--right_list {
-      text-align: right;
-      font-size: 12px;
-      margin-top: 55px;
-
-      &:after {
-        @include underline;
-        margin-top: 20px;
-        margin-bottom: 50px;
-      }
-    }
     &--mission {
       font-size: 12px;
       font-style: italic;
+      padding-top: 5px;
 
       &:after {
         @include underline;
       }
     }
   }
+
+  &__right {
+    align-self: flex-end;
+    width: 50%;
+    text-align: right;
+    margin-top: -50px;
+    font-size: 12px;
+    padding-bottom: 30px;
+
+    &:after {
+      @include underline;
+      margin-left: 100px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  &__single_button {
+    width: 23px;
+    height: 27px;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      border: 1px solid black;
+    }
+  }
+
+  //&__left {
+  //  width: 50%;
+  //}
+  //
+  //&_right {
+  //  width: 50%;
+  //}
+  //
+  //&__single {
+  //  list-style: none;
+  //  font-size: 18px;
+  //  font-family: 'Merriweather', Arial, sans-serif;
+  //
+  //  @mixin underline {
+  //    content: '';
+  //    display: block;
+  //    width: 300px;
+  //    height: 1px;
+  //    background-color: $underline-lists-section;
+  //    margin-top: 20px;
+  //    margin-bottom: 20px;
+  //  }
+  //  &--right_list {
+  //    text-align: right;
+  //    font-size: 12px;
+  //    margin-top: 55px;
+  //
+  //    &:after {
+  //      @include underline;
+  //      margin-top: 20px;
+  //      margin-bottom: 50px;
+  //    }
+  //  }
+  //  &--mission {
+  //    font-size: 12px;
+  //    font-style: italic;
+  //
+  //    &:after {
+  //      @include underline;
+  //    }
+  //  }
+  //}
 }
