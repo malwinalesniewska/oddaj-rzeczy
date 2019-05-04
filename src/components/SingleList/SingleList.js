@@ -16,7 +16,7 @@ class SingleList extends Component {
     };
 
     render() {
-        const { currentPage } = this.state;
+        const {currentPage} = this.state;
         const {list} = this.props;
 
         const start = (currentPage - 1) * NUMBER_OF_ITEMS_PER_PAGE;
@@ -32,39 +32,35 @@ class SingleList extends Component {
 
         return (
             <div className='organisations_list'>
-                {/*<div className='organisations_list__lists'>*/}
-                    {
-                        elemsToDisplay.map((elem) => {
-                            return (
-                                <Fragment>
-                                    <div className='organisations_list__left'>
-                                        <div>
-                                            { elem.title }
-                                        </div>
-                                        <div className='organisations_list__left--mission'>
-                                            { elem.description }
-                                        </div>
+                {
+                    elemsToDisplay.map((elem) => {
+                        return (
+                            <Fragment>
+                                <div className='organisations_list__left'>
+                                    <div>
+                                        {elem.title}
                                     </div>
-                                    <div className='organisations_list__right'>
-                                        { elem.items }
+                                    <div className='organisations_list__left--mission'>
+                                        {elem.description}
                                     </div>
-                                </Fragment>
-                            )
-                        })
-                    }
-                {/*</div>*/}
+                                </div>
+                                <div className='organisations_list__right'>
+                                    {elem.items}
+                                </div>
+                            </Fragment>
+                        )
+                    })
+                }
                 <div className='organisations_list__buttons'>
                     {pages.map((pageNumber) => {
-                            return (
-
-                                <button
-                                    className='organisations_list__single_button'
-                                    onClick={() => this.goToPage(pageNumber)}
-                                >
-                                    {pageNumber}
-                                </button>
-
-                            )
+                        return (
+                            <button
+                                className='organisations_list__single_button'
+                                onClick={() => this.goToPage(pageNumber)}
+                            >
+                                {pageNumber}
+                            </button>
+                        )
                     })
                     }
                 </div>

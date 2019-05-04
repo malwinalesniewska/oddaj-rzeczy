@@ -9,39 +9,33 @@ class ContactForm extends Component {
         message: ''
     };
 
-    userName = (event) => {
+    allInputsHandler = (event) => {
         this.setState({
-            name: event.target.value
-        })
-    };
-
-    userEmail = (event) => {
-        this.setState({
-            email: event.target.value
-        })
-    };
-
-    userMessage = (event) => {
-        this.setState({
-            message: event.target.value
+            [event.target.name]: event.target.value
         })
     };
 
     handleSubmit = (event) => {
-        let info = '';
+        const namePattern = /^[a-zA-Z-,.ąęćźżńłśóĆŻŹŃŁŚÓ']+$/;
+        const mailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+        const messagePattern = /^.{1,250}/;
+        let info = [];
         event.preventDefault();
 
-        if (this.state.name === '') {
-            info = 'Pole imię musi zostać uzupełnione'
-        } else if (!this.state.email.includes('@') || this.state.email === '') {
-            info = 'Pole email musi zostać uzupełnione i zawierać znak @'
-        } else if (this.state.message === '') {
-            info = 'Pole wiadomość musi zostać uzupełnione'
-        } else {
+        if (!namePattern.test(this.state.name)) {
+            info.push('Pole imię musi zostać uzupełnione');
+        }
+        if (!mailPattern.test(this.state.email)) {
+            info.push('Pole email musi zostać uzupełnione i zawierać znak @');
+        }
+        if (!messagePattern.test(this.state.message)) {
+            info.push('Pole wiadomość musi zostać uzupełnione');
+        }
+        if (namePattern.test(this.state.name) && mailPattern.test(this.state.email) && messagePattern.test(this.state.message)) {
             info = 'Dziękujemy za wysłanie formularza!'
         }
 
-        alert(info)
+        alert(info);
     };
 
     render() {
@@ -62,25 +56,25 @@ class ContactForm extends Component {
                                 type='text'
                                 name='name'
                                 placeholder='Imię'
-                                onChange={this.userName}
+                                onChange={this.allInputsHandler}
                             />
                             <input
                                 className='contact_section__input contact_section__input--email'
                                 type='email'
                                 name='email'
                                 placeholder='Email'
-                                onChange={this.userEmail}
+                                onChange={this.allInputsHandler}
                             />
                         </div>
-                        <br />
+                        <br/>
                         <input
                             className='contact_section__input contact_section__input--message'
                             type='text'
                             name='message'
                             placeholder='Wiadomość'
-                            onChange={this.userMessage}
+                            onChange={this.allInputsHandler}
                         />
-                        <br />
+                        <br/>
                         <input
                             className='contact_section__input contact_section__input--send'
                             type='submit'
