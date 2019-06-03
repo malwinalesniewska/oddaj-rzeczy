@@ -64,10 +64,9 @@ class ContactForm extends Component {
 
         const validation = this.validator.validate(this.state);
         this.setState({ validation });
-        this.submitted = true;
 
         if (validation.isValid) {
-            // handle actual form submission here
+            this.submitted = true;
         }
     };
 
@@ -78,77 +77,81 @@ class ContactForm extends Component {
 
         return (
             <Fragment>
-            <link
-                rel="stylesheet"
-                href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-                crossOrigin="anonymous"
-            />
-            <div className='contact_section'>
-                <div className='contact_section__main'>
-                    <p className='contact_section__title'>
-                        Skontaktuj się z nami
-                    </p>
-                    <Decoration/>
-                    <form className='contact_section__form'>
-                        <p className='contact_section__form_title'>
-                            FORMULARZ KONTAKTOWY
+                <link
+                    rel="stylesheet"
+                    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                    crossOrigin="anonymous"
+                />
+                <div className='contact_section'>
+                    {this.submitted ? (
+                        <div className='contact_section__form-acceptance'>Dziękujemy za wysłanie formularza!</div>
+                    ) : (
+                    <div className='contact_section__main'>
+                        <p className='contact_section__title'>
+                            Skontaktuj się z nami
                         </p>
+                        <Decoration/>
+                        <form className='contact_section__form'>
+                            <p className='contact_section__form_title'>
+                                FORMULARZ KONTAKTOWY
+                            </p>
 
-                        <div className='contact_section__name_email_inputs'>
-                            <div className={validation.name.isInvalid ? 'has-error' : undefined}>
-                                <input className='contact_section__input contact_section__input--name'
+                            <div className='contact_section__name_email_inputs'>
+                                <div className={validation.name.isInvalid ? 'has-error' : undefined}>
+                                    <input className='contact_section__input contact_section__input--name'
+                                           type='text'
+                                           name='name'
+                                           placeholder='Imię'
+                                           onChange={this.allInputsHandler}
+                                    />
+                                    <span className='help-block ml-4'>{validation.name.message}</span>
+                                </div>
+                                <div className={validation.email.isInvalid ? 'has-error' : undefined}>
+                                    <input type='email'
+                                           className='contact_section__input contact_section__input--email'
+                                           name='email'
+                                           placeholder='E-mail'
+                                           onChange={this.allInputsHandler}
+                                    />
+                                    <span className='help-block ml-4'>{validation.email.message}</span>
+                                </div>
+                            </div>
+                            <br/>
+                            <div className={validation.message.isInvalid ? 'has-error' : undefined} style={{width: '100%'}}>
+                                <input
+                                    className='contact_section__input contact_section__input--message'
                                        type='text'
-                                       name='name'
-                                       placeholder='Imię'
+                                       name='message'
+                                       placeholder='Wiadomość'
                                        onChange={this.allInputsHandler}
                                 />
-                                <span className='help-block ml-4'>{validation.name.message}</span>
+                                <span className='help-block ml-4'>{validation.message.message}</span>
                             </div>
-                            <div className={validation.email.isInvalid ? 'has-error' : undefined}>
-                                <input type='email'
-                                       className='contact_section__input contact_section__input--email'
-                                       name='email'
-                                       placeholder='john@doe.com'
-                                       onChange={this.allInputsHandler}
-                                />
-                                <span className='help-block ml-4'>{validation.email.message}</span>
-                            </div>
-                        </div>
-                        <br/>
-                        <div className={validation.message.isInvalid ? 'has-error' : undefined} style={{width: '100%'}}>
+                            <br/>
                             <input
-                                className='contact_section__input contact_section__input--message'
-                                   type='text'
-                                   name='message'
-                                   placeholder='Wiadomość'
-                                   onChange={this.allInputsHandler}
+                                className='contact_section__input contact_section__input--send'
+                                type='submit'
+                                value='Wyślij'
+                                onClick={this.handleSubmit}
                             />
-                            <span className='help-block ml-4'>{validation.message.message}</span>
-                        </div>
-                        <br/>
-                        <input
-                            className='contact_section__input contact_section__input--send'
-                            type='submit'
-                            value='Wyślij'
-                            onClick={this.handleSubmit}
-                        />
-                    </form>
-                </div>
-                <footer className='contact_section__footer'>
-                    <p>
-                        Copyright 2015 &copy; by Anna Dadej
-                    </p>
-                    <div className='contact_section__social'>
-                        <button className='contact_section__media'>
-                            <div className='contact_section__media--facebook'/>
-                        </button>
-                        <button className='contact_section__media'>
-                            <div className='contact_section__media--instagram'/>
-                        </button>
+                        </form>
                     </div>
-                </footer>
-            </div>
+                    )}
+                    <footer className='contact_section__footer'>
+                        <p>
+                            Copyright 2015 &copy; by Anna Dadej
+                        </p>
+                        <div className='contact_section__social'>
+                            <button className='contact_section__media'>
+                                <div className='contact_section__media--facebook'/>
+                            </button>
+                            <button className='contact_section__media'>
+                                <div className='contact_section__media--instagram'/>
+                            </button>
+                        </div>
+                    </footer>
+                </div>
             </Fragment>
         );
     }

@@ -8,6 +8,12 @@
   align-items: flex-end;
   flex-direction: column;
 
+  &__form-acceptance {
+    width: 35%;
+    margin-top: 20%;
+    font-size: 25px;
+  }
+
   &__main {
     width: 40%;
     margin-top: 100px;
